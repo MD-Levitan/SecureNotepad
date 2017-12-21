@@ -29,7 +29,7 @@ class Client:
                                            bytes.fromhex(response.read().decode('UTF-8')), str(self.NANS))
             return True
         else:
-            print("Error status: "+response.status)
+            print("Error status: " + str(response.status))
             return False
 
     def auth_msg(self, login, password):
@@ -40,7 +40,7 @@ class Client:
                                            bytes.fromhex(response.read().decode('UTF-8')), str(self.NANS))
             return True
         else:
-            print(response.status)
+            print("Error status: " + str(response.status))
             return False
 
     def list_msg(self):
@@ -58,7 +58,7 @@ class Client:
             return self.list_msg()
 
         else:
-            print("Error status: " + response.status)
+            print("Error status: " + str(response.status))
             return files
 
     def file_msg(self, filename):
@@ -77,7 +77,7 @@ class Client:
             return self.file_msg(filename)
 
         else:
-            print("Error status: " + response.status)
+            print("Error status: " + str(response.status))
             return data
 
     def regenerate_msg(self):
@@ -93,7 +93,7 @@ class Client:
                                            bytes.fromhex(response.read().decode('UTF-8')), str(self.NANS))
 
         else:
-            print("Error status: " + response.status)
+            print("Error status: " + str(response.status))
             return False
 
 
@@ -143,6 +143,10 @@ if __name__ == '__main__':
         if choose == 2:
             filename = input("filename: ")
             data = client.file_msg(filename)
+            if data is None:
+                print("Input correct filename!")
+                print()
+                continue
             print(str(filename) + "\n" + data)
             print()
             continue

@@ -166,4 +166,4 @@ def decrypt_asm(level, private_key, session_key, header):
               ctypes.cast(result, c_ubyte_p), result_len)
     return result
 
-print(hash("max").hex())
+print(hash("123").hex())

@@ -7,18 +7,19 @@ from os.path import isfile, join
 from Crypto import *
 
 users_auth ={"max": "bfd1b193a3e3f1b85b2f813b5924cf4f4f68f74dcc0fc49aa3b24831ee42b262",
-             "user": "2bf5d688ce9abd019bcf1af9e107ea2e3757f226f321bbb0f41f753694c75255"}
+             "user": "2bf5d688ce9abd019bcf1af9e107ea2e3757f226f321bbb0f41f753694c75255",
+             "alex": "4a8e98462f4370aa136869d71c40e6153179b0f21ffcfa0a492f9753d0e259cb",
+             "ivan": "81fcbe3e5a28c3a5d9589013bc92428bd5ea384a9175164d44137e06fb7ffd00"}
 
 class Service:
     def __init__(self, level, public_key, NANS):
-        self.path = "/home/levitan/Store/"
+        self.path = os.getcwd() + "/Store/"
         self.auth = False
         self.NANS_start = NANS
         self.NANS = NANS + 1
         self.level = level
         self.public_key = public_key
         self.session_key = generate_session_key()
-        print(self.session_key)
 
     def check_NANS(self, NANS):
         val = NANS == self.NANS
@@ -56,7 +57,7 @@ class Service:
     def get_list(self):
         try:
             return ';'.join([f for f in listdir(self.path) if isfile(join(self.path, f))])
-        except _:
+        except Exception:
             return None
 
     def get_file(self, filename):
@@ -67,7 +68,7 @@ class Service:
             data = file.read()
             file.close()
             return data
-        except _:
+        except Exception:
             return None
 
 
