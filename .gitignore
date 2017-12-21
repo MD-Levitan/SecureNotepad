@@ -3,7 +3,7 @@
 !.gitignore
 !*.h
 !*.cpp
-!*.pro
+!*.pdf
 !*.txt
 !*.py
 !*.so
