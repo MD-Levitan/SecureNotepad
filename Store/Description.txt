@@ -1,0 +1,12 @@
+Message = 64 bites(bi) = 8 bytes(by)
+L(left part of message) = 32 bi = 4 by
+R(right -||-) = 32 bi = 4 by
+Key = 128 bi = 16 by
+Key_R = 32 bi = 4 by
+Key_M = 32 bi = 4 by
+
+18110095706517928983
+9958179453202083902
+113660381472895567051197
+8169938073684528169
+8169938073684528169

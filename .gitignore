@@ -1,0 +1,9 @@
+*
+!*/
+!.gitignore
+!*.h
+!*.cpp
+!*.pro
+!*.txt
+!*.py
+!*.so
