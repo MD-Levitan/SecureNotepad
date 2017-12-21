@@ -1,6 +1,6 @@
 from ctypes import cdll
 import ctypes
-lib = cdll.LoadLibrary('./lib.so')
+lib = cdll.LoadLibrary('CryptoPart/lib.so')
 c_ubyte_p = ctypes.POINTER(ctypes.c_ubyte)
 
 
@@ -165,5 +165,3 @@ def decrypt_asm(level, private_key, session_key, header):
               ctypes.cast(header, c_ubyte_p), 16,
               ctypes.cast(result, c_ubyte_p), result_len)
     return result
-
-print(hash("123").hex())
