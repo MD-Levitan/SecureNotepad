@@ -3,6 +3,7 @@
 !.gitignore
 !*.h
 !*.cpp
+!*.c
 !*.pdf
 !*.txt
 !*.py
